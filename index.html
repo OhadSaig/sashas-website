@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sasha's Pizzeria & Coffee Bar – Neapolitan wood-fired pizza, specialty coffee and artisan panini in the heart of Ballsbridge, Dublin 4.">
+  <title>Sasha's | Pizzeria & Coffee Bar · Ballsbridge, Dublin 4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       1. STICKY NAVBAR
+  ══════════════════════════════════════════ -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">SASHA'S</a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about" class="nav-link">Our Story</a></li>
+        <li><a href="#menu" class="nav-link">Menu</a></li>
+        <li><a href="#shop" class="nav-link">Shop</a></li>
+        <li><a href="#find-us" class="nav-link">Find Us</a></li>
+        <li>
+          <a href="https://www.opentable.com/restref/client/?rid=1296488" target="_blank" rel="noopener" class="btn btn-sm nav-book">Book a Table</a>
+        </li>
+      </ul>
+      <div class="nav-right">
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 01-8 0"></path>
+          </svg>
+          <span class="cart-badge" id="cartCount" aria-live="polite">0</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
+    <div class="mobile-logo">SASHA'S</div>
+    <ul class="mobile-nav-links" role="list">
+      <li><a href="#about" class="mobile-nav-link">Our Story</a></li>
+      <li><a href="#menu" class="mobile-nav-link">Menu</a></li>
+      <li><a href="#shop" class="mobile-nav-link">Shop</a></li>
+      <li><a href="#find-us" class="mobile-nav-link">Find Us</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      <li>
+        <a href="https://www.opentable.com/restref/client/?rid=1296488" class="mobile-nav-link book-link" target="_blank" rel="noopener">Book a Table ↗</a>
+      </li>
+    </ul>
+    <div class="mobile-nav-footer">
+      <a href="https://www.instagram.com/sashas_pizzeria/" target="_blank" rel="noopener" aria-label="Sasha's Pizzeria on Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/sashas_coffee/" target="_blank" rel="noopener" aria-label="Sasha's Coffee Bar on Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       2. HERO — overlay AFTER image div in DOM
+  ══════════════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1920&q=85&auto=format&fit=crop')"></div>
+    <!-- BUG FIX: overlay is AFTER hero-bg in DOM so it sits on top -->
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Est. 2020 · Ballsbridge, Dublin 4</div>
+      <h1>Where the <em>neighbourhood</em><br>comes alive</h1>
+      <p class="hero-sub">Wood-fired Neapolitan pizza · Specialty coffee · Artisan panini<br>47 Shelbourne Road, Ballsbridge</p>
+      <div class="hero-ctas">
+        <a href="https://www.opentable.com/restref/client/?rid=1296488" target="_blank" rel="noopener" class="btn btn-primary">Reserve a Table</a>
+        <a href="#menu" class="btn btn-ghost">View Menu</a>
+      </div>
+      <div id="statusBadge" class="status-badge" aria-live="polite"></div>
+      <div class="hours-pill">
+        <span>☕ Coffee: Mon–Fri 7:30–15:00, Sat 10:00–14:00</span>
+        <span class="pill-sep">·</span>
+        <span>🍕 Dinner: Tue–Sat 17:00–21:30</span>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <svg width="30" height="44" viewBox="0 0 30 44" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="28" height="42" rx="14"/><circle cx="15" cy="12" r="3" fill="currentColor" stroke="none"><animate attributeName="cy" values="12;28;12" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/></circle></svg>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       3. MARQUEE STRIP
+  ══════════════════════════════════════════ -->
+  <div class="marquee-strip">
+    <!-- BUG FIX: pauses on hover via CSS animation-play-state -->
+    <div class="marquee-inner" id="marqueeInner">
+      <div class="marquee-track" aria-hidden="false">
+        <span>Wood-Fired Pizza</span><span class="msep">✦</span>
+        <span>Specialty Coffee</span><span class="msep">✦</span>
+        <span>Artisan Panini</span><span class="msep">✦</span>
+        <span>100% Irish Beef</span><span class="msep">✦</span>
+        <span>Neighbourhood Joint</span><span class="msep">✦</span>
+        <span>Ballsbridge, Dublin 4</span><span class="msep">✦</span>
+        <span>Neapolitan Tradition</span><span class="msep">✦</span>
+        <span>Freshly Baked Daily</span><span class="msep">✦</span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span>Wood-Fired Pizza</span><span class="msep">✦</span>
+        <span>Specialty Coffee</span><span class="msep">✦</span>
+        <span>Artisan Panini</span><span class="msep">✦</span>
+        <span>100% Irish Beef</span><span class="msep">✦</span>
+        <span>Neighbourhood Joint</span><span class="msep">✦</span>
+        <span>Ballsbridge, Dublin 4</span><span class="msep">✦</span>
+        <span>Neapolitan Tradition</span><span class="msep">✦</span>
+        <span>Freshly Baked Daily</span><span class="msep">✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       4. ABOUT / OUR STORY
+  ══════════════════════════════════════════ -->
+  <section id="about" class="section about-section fade-up">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="about-img-main">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80&auto=format&fit=crop" alt="Neapolitan pizza fresh from Sasha's wood-fired oven" loading="lazy">
+          </div>
+          <div class="about-img-accent">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&q=80&auto=format&fit=crop" alt="Specialty coffee at Sasha's Coffee Bar" loading="lazy">
+          </div>
+          <div class="about-stat-card">
+            <div class="stat-number">4.8</div>
+            <div class="stat-label">★ on Google<br><small>279 reviews</small></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p class="section-label">Our Story</p>
+          <h2>Two concepts,<br>one <em>neighbourhood</em></h2>
+          <p>Sasha's began as a simple idea: bring the warmth of Italian craft and the ritual of specialty coffee to the Ballsbridge community. Tucked along Shelbourne Road, we opened our doors with a wood-fired oven, a commitment to honest ingredients, and a love for our neighbours.</p>
+          <p>Today, Sasha's operates as two connected spaces — the Pizzeria, serving Neapolitan-style pizza and pasta for lunch and dinner, and the Coffee Bar (our "Therapy Window"), your essential morning stop from 7:30am.</p>
+          <div class="about-pillars">
+            <div class="pillar-card">
+              <div class="pillar-icon">🔥</div>
+              <div>
+                <strong>Wood-Fired Craft</strong>
+                <span>Every pizza baked at 485°C in our traditional wood-fired oven — perfection in under 90 seconds</span>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">☕</div>
+              <div>
+                <strong>The Therapy Window</strong>
+                <span>Our specialty coffee bar — open from 7:30am on weekdays, serving your daily ritual</span>
+              </div>
+            </div>
+            <div class="pillar-card">
+              <div class="pillar-icon">🇮🇪</div>
+              <div>
+                <strong>Irish Quality</strong>
+                <span>100% Irish beef, locally sourced where possible — we care about where our food comes from</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       5. FEATURE SECTION (full-bleed, dark)
+  ══════════════════════════════════════════ -->
+  <section class="feature-section fade-up">
+    <div class="feature-bg" style="background-image:url('https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=1920&q=85&auto=format&fit=crop')"></div>
+    <div class="feature-overlay"></div>
+    <div class="container">
+      <div class="feature-content">
+        <p class="section-label light">The Oven</p>
+        <h2>485°C of <em>Neapolitan</em><br>tradition</h2>
+        <p>Our wood-fired oven runs at 485°C, producing a perfectly charred, leopard-spotted cornicione in under 90 seconds. Every pizza is hand-stretched, simply topped with DOP-certified San Marzano tomatoes, and finished with care passed down through generations of Italian tradition.</p>
+        <a href="#menu" class="btn btn-primary">See the Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       6. MENU — tabbed interface
+  ══════════════════════════════════════════ -->
+  <section id="menu" class="section menu-section fade-up">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">What We Serve</p>
+        <h2>The <em>Menu</em></h2>
+        <p class="section-sub">All dishes made fresh in-house daily. Please ask a member of staff about allergens.</p>
+      </div>
+      <div class="menu-tabs" role="tablist">
+        <button class="tab-btn active" data-tab="pizza" role="tab" aria-selected="true" aria-controls="tab-pizza">🍕 Pizza</button>
+        <button class="tab-btn" data-tab="lunch" role="tab" aria-selected="false" aria-controls="tab-lunch">🥪 Lunch</button>
+        <button class="tab-btn" data-tab="coffee" role="tab" aria-selected="false" aria-controls="tab-coffee">☕ Coffee Bar</button>
+      </div>
+
+      <!-- PIZZA TAB -->
+      <div class="tab-content active" id="tab-pizza" role="tabpanel">
+        <p class="menu-note">Wood-fired Neapolitan pizza · Served Tue–Sat from 17:00</p>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3>Marinara</h3>
+              <span class="price">€15</span>
+            </div>
+            <p>San Marzano tomato, garlic, oregano, extra virgin olive oil</p>
+            <span class="diet-tag vegan">Vegan</span>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3>Margherita</h3>
+              <span class="price">€17.50</span>
+            </div>
+            <p>San Marzano tomato, fior di latte, fresh basil, extra virgin olive oil</p>
+            <span class="diet-tag vegetarian">Vegetarian</span>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3>Diavola</h3>
+              <span class="price">€19.95</span>
+            </div>
+            <p>San Marzano tomato, fior di latte, pepperoni, fresh chilli, fresh basil</p>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3>Parma</h3>
+              <span class="price">€19.95</span>
+            </div>
+            <p>Fior di latte, prosciutto di Parma, wild rocket, parmigiano reggiano, EVOO</p>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header">
+              <h3>Maia</h3>
+              <span class="price">€19.95</span>
+            </div>
+            <p>San Marzano tomato, fior di latte, salsiccia piccante, goat cheese, wild rocket</p>
+          </div>
+          <div class="menu-card featured-card">
+            <div class="menu-card-header">
+              <h3>Meatballs</h3>
+              <span class="price">€23</span>
+            </div>
+            <p>100% Irish beef meatballs, San Marzano tomato, fior di latte, fresh basil</p>
+            <span class="diet-tag signature">Signature</span>
+          </div>
+        </div>
+
+        <div class="menu-subsection">
+          <h3 class="subsection-title">Sides & Starters</h3>
+          <div class="menu-grid menu-grid-sm">
+            <div class="menu-card">
+              <div class="menu-card-header"><h4>Burrata</h4><span class="price">€12.50</span></div>
+              <p>Fresh burrata, heritage tomato, basil oil</p>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-header"><h4>Aubergine Parmigiana</h4><span class="price">€12.95</span></div>
+              <p>Slow-cooked aubergine, San Marzano, parmigiano</p>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-header"><h4>Rocket & Parmigiano Salad</h4><span class="price">€8.50</span></div>
+              <p>Wild rocket, shaved parmigiano reggiano, lemon EVOO</p>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-header"><h4>Bruschetta</h4><span class="price">€11</span></div>
+              <p>Toasted sourdough, heritage tomato, basil, garlic, EVOO</p>
+            </div>
+          </div>
+
+          <h3 class="subsection-title">Desserts</h3>
+          <div class="menu-grid menu-grid-sm">
+            <div class="menu-card">
+              <div class="menu-card-header"><h4>Chocolate Brownie</h4><span class="price">€8.50</span></div>
+              <p>Warm homemade brownie with vanilla ice cream</p>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-header"><h4>Cheesecake</h4><span class="price">€8.50</span></div>
+              <p>Classic New York-style with seasonal berry compote</p>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-header"><h4>Homemade Ice Cream</h4><span class="price">€7.50</span></div>
+              <p>Ask your server for today's flavours</p>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-header"><h4>Banana & Walnut Bread</h4><span class="price">€8.95</span></div>
+              <p>Warm-baked, served with whipped butter and honey</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LUNCH TAB -->
+      <div class="tab-content" id="tab-lunch" role="tabpanel">
+        <p class="menu-note">Pasta Bar served Tue–Thu 12:00–14:00 · Panini available during Coffee Bar hours</p>
+        <h3 class="subsection-title">Pasta Bar · €14</h3>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-card-header"><h3>Rigatoni Arrabbiata</h3><span class="price">€14</span></div>
+            <p>Rigatoni, spicy San Marzano tomato, garlic, fresh chilli, pecorino</p>
+            <span class="diet-tag vegetarian">Vegetarian</span>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header"><h3>Spaghetti Carrettiera</h3><span class="price">€14</span></div>
+            <p>Spaghetti, guanciale, pecorino romano, black pepper, San Marzano</p>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header"><h3>Rigatoni Salsiccia Piccante</h3><span class="price">€14</span></div>
+            <p>Rigatoni, spicy Italian sausage, cream, white wine, parmigiano</p>
+          </div>
+          <div class="menu-card featured-card">
+            <div class="menu-card-header"><h3>Rigatoni Beef Ragù</h3><span class="price">€14</span></div>
+            <p>Rigatoni, slow-braised 100% Irish beef ragù, parmigiano reggiano</p>
+            <span class="diet-tag signature">Signature</span>
+          </div>
+        </div>
+
+        <h3 class="subsection-title" style="margin-top:2rem">Grilled Sourdough Panini · €9.50</h3>
+        <p class="menu-note">Available Mon–Fri 7:30–15:00, Sat 10:00–14:00 from the Coffee Bar</p>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-card-header"><h3>Pepperoni & Smoked Mozzarella</h3><span class="price">€9.50</span></div>
+            <p>Grilled sourdough, pepperoni, smoked mozzarella, wild rocket</p>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header"><h3>Ham & Provolone</h3><span class="price">€9.50</span></div>
+            <p>Grilled sourdough, cooked ham, provolone, vine tomato, wild rocket</p>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header"><h3>Caprese</h3><span class="price">€9.50</span></div>
+            <p>Grilled sourdough, buffalo mozzarella, heritage tomato, basil, EVOO</p>
+            <span class="diet-tag vegetarian">Vegetarian</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COFFEE BAR TAB -->
+      <div class="tab-content" id="tab-coffee" role="tabpanel">
+        <p class="menu-note">Sasha's Coffee Bar · "The Therapy Window" · Mon–Fri 7:30–15:00, Sat 10:00–14:00</p>
+        <div class="menu-grid">
+          <div class="menu-card">
+            <div class="menu-card-header"><h3>Espresso</h3><span class="price">€2.80</span></div>
+            <p>Single or double shot of our house blend — rich, balanced, and aromatic</p>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header"><h3>Americano</h3><span class="price">€3.20</span></div>
+            <p>Double espresso lengthened with hot water — served black or with milk</p>
+          </div>
+          <div class="menu-card featured-card">
+            <div class="menu-card-header"><h3>Flat White</h3><span class="price">€3.50</span></div>
+            <p>Double ristretto, micro-foamed whole milk — our most-ordered daily ritual</p>
+            <span class="diet-tag signature">Most Popular</span>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header"><h3>Cappuccino</h3><span class="price">€3.50</span></div>
+            <p>Double espresso, equal parts steamed milk and dense milk foam</p>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header"><h3>Latte</h3><span class="price">€3.80</span></div>
+            <p>Double espresso, silky steamed milk, light foam — oat milk available</p>
+          </div>
+          <div class="menu-card">
+            <div class="menu-card-header"><h3>Cold Brew</h3><span class="price">€4.00</span></div>
+            <p>12-hour cold-steeped house blend, served over ice — smooth and refreshing</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="delivery-note">
+        <p>Also available for delivery via</p>
+        <div class="delivery-chips">
+          <span class="delivery-chip">Just Eat</span>
+          <span class="delivery-chip">Deliveroo</span>
+          <span class="delivery-chip">Uber Eats</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       7. VISIT / FOOT TRAFFIC BANNER
+  ══════════════════════════════════════════ -->
+  <div class="visit-banner">
+    <div class="container">
+      <div class="visit-banner-inner">
+        <div class="visit-text">
+          <p class="visit-eyebrow">Come find us</p>
+          <p class="visit-address">47 Shelbourne Road, Ballsbridge, Dublin 4</p>
+        </div>
+        <!-- BUG FIX: href opens real Google Maps directions -->
+        <a href="https://www.google.com/maps/dir/?api=1&destination=47+Shelbourne+Road%2C+Ballsbridge%2C+Dublin+4%2C+Ireland"
+           target="_blank" rel="noopener" class="btn btn-white">Get Directions →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       8. ONLINE SHOP
+  ══════════════════════════════════════════ -->
+  <section id="shop" class="section shop-section fade-up">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Take Sasha's Home</p>
+        <h2>The <em>Shop</em></h2>
+        <p class="section-sub">Specialty coffee, branded goods and gift cards — delivered across Ireland.</p>
+      </div>
+      <div class="shop-filters" role="group" aria-label="Filter products by category">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="coffee">Coffee</button>
+        <button class="filter-btn" data-filter="merch">Merch</button>
+        <button class="filter-btn" data-filter="gift">Gift Cards</button>
+      </div>
+      <div class="shop-grid" id="shopGrid"></div>
+      <p class="shipping-note">🚚 Free shipping on orders over €50 · Standard delivery 2–3 working days across Ireland</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       9. VALUES / SUSTAINABILITY
+  ══════════════════════════════════════════ -->
+  <section id="values" class="section values-section fade-up">
+    <div class="container">
+      <div class="values-grid">
+        <div class="values-text">
+          <p class="section-label">What We Stand For</p>
+          <h2>Quality without<br><em>compromise</em></h2>
+          <p>From the farm to your table, we care deeply about where our ingredients come from and how they're treated. Great food starts with honest sourcing and genuine respect for tradition.</p>
+          <ul class="values-list">
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>100% Irish Beef</strong>
+                <span>Our meatballs and ragù use premium Irish beef from fully traceable Irish farms</span>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>DOP San Marzano Tomatoes</strong>
+                <span>Protected designation of origin tomatoes from the Campania region of Italy</span>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Freshly Baked Daily</strong>
+                <span>Dough prepared fresh every single day — no frozen bases, ever</span>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Specialty Coffee</strong>
+                <span>Single-origin beans sourced from ethical, traceable farms worldwide</span>
+              </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <strong>Homemade Desserts</strong>
+                <span>Every dessert made in-house from scratch — baked fresh daily</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="values-visual">
+          <img src="https://images.unsplash.com/photo-1498579397066-22750a3cb424?w=700&q=80&auto=format&fit=crop" alt="Fresh ingredients at Sasha's" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       10. INSTAGRAM GRID
+  ══════════════════════════════════════════ -->
+  <section id="instagram" class="section instagram-section fade-up">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Follow Along</p>
+        <h2><em>@sashas_pizzeria</em> &amp; <em>@sashas_coffee</em></h2>
+        <p class="section-sub">Two feeds, one neighbourhood. Follow both for pizza drops, coffee rituals and behind-the-scenes moments.</p>
+      </div>
+      <div class="ig-grid">
+        <a href="https://www.instagram.com/sashas_pizzeria/" target="_blank" rel="noopener" class="ig-tile">
+          <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&h=400&q=80&auto=format&fit=crop" alt="Neapolitan pizza from Sasha's wood-fired oven" loading="lazy">
+          <div class="ig-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/sashas_coffee/" target="_blank" rel="noopener" class="ig-tile">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=400&h=400&q=80&auto=format&fit=crop" alt="Morning coffee at Sasha's Coffee Bar" loading="lazy">
+          <div class="ig-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/sashas_pizzeria/" target="_blank" rel="noopener" class="ig-tile">
+          <img src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=400&h=400&q=80&auto=format&fit=crop" alt="Pizza making at Sasha's" loading="lazy">
+          <div class="ig-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/sashas_coffee/" target="_blank" rel="noopener" class="ig-tile">
+          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=400&q=80&auto=format&fit=crop" alt="Latte art at Sasha's Coffee Bar" loading="lazy">
+          <div class="ig-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/sashas_pizzeria/" target="_blank" rel="noopener" class="ig-tile">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&q=80&auto=format&fit=crop" alt="Evening atmosphere at Sasha's Pizzeria" loading="lazy">
+          <div class="ig-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        </a>
+        <a href="https://www.instagram.com/sashas_coffee/" target="_blank" rel="noopener" class="ig-tile">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&h=400&q=80&auto=format&fit=crop" alt="Coffee morning ritual at Sasha's" loading="lazy">
+          <div class="ig-overlay"><svg width="28" height="28" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></div>
+        </a>
+      </div>
+      <div class="ig-cta-row">
+        <a href="https://www.instagram.com/sashas_pizzeria/" target="_blank" rel="noopener" class="btn btn-outline">Follow @sashas_pizzeria</a>
+        <a href="https://www.instagram.com/sashas_coffee/" target="_blank" rel="noopener" class="btn btn-outline">Follow @sashas_coffee</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       11. FIND US / MAP
+  ══════════════════════════════════════════ -->
+  <section id="find-us" class="section find-us-section fade-up">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">Come Find Us</p>
+        <h2>In the heart of <em>Ballsbridge</em></h2>
+      </div>
+      <div class="find-us-grid">
+        <div class="find-us-map">
+          <iframe
+            src="https://maps.google.com/maps?q=53.3304265,-6.2319889&z=17&output=embed"
+            width="100%" height="420" style="border:0;border-radius:var(--radius-lg);" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Map: Sasha's at 47 Shelbourne Road, Ballsbridge, Dublin 4">
+          </iframe>
+        </div>
+        <div class="find-us-info">
+          <div class="info-block">
+            <h3>Address</h3>
+            <address>
+              47 Shelbourne Road<br>
+              Ballsbridge, Dublin 4<br>
+              D04 X389, Ireland
+            </address>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=47+Shelbourne+Road%2C+Ballsbridge%2C+Dublin+4%2C+Ireland"
+               target="_blank" rel="noopener" class="btn btn-sm btn-outline" style="margin-top:.75rem;display:inline-flex">Get Directions →</a>
+          </div>
+          <div class="info-block">
+            <h3>Contact</h3>
+            <!-- BUG FIX: tel: link has NO spaces in number -->
+            <p><a href="tel:+35316670020" class="info-link">+353 1 667 0020</a></p>
+            <p><a href="mailto:info@sashas.ie" class="info-link">info@sashas.ie</a></p>
+          </div>
+          <div class="info-block">
+            <h3>Opening Hours</h3>
+            <table class="hours-table">
+              <tbody>
+                <tr class="hours-heading-row"><td colspan="2" class="hours-heading">☕ Coffee Bar</td></tr>
+                <tr><td>Mon–Fri</td><td>7:30 – 15:00</td></tr>
+                <tr><td>Saturday</td><td>10:00 – 14:00</td></tr>
+                <tr><td>Sunday</td><td class="closed">Closed</td></tr>
+                <tr class="hours-spacer"><td colspan="2"></td></tr>
+                <tr class="hours-heading-row"><td colspan="2" class="hours-heading">🍕 Lunch</td></tr>
+                <tr><td>Tue–Thu</td><td>12:00 – 14:00</td></tr>
+                <tr class="hours-spacer"><td colspan="2"></td></tr>
+                <tr class="hours-heading-row"><td colspan="2" class="hours-heading">🍕 Dinner</td></tr>
+                <tr><td>Tue–Sat</td><td>17:00 – 21:30</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-block">
+            <h3>Follow Us</h3>
+            <div class="social-chips">
+              <a href="https://www.instagram.com/sashas_pizzeria/" target="_blank" rel="noopener" class="social-chip">📷 @sashas_pizzeria</a>
+              <a href="https://www.instagram.com/sashas_coffee/" target="_blank" rel="noopener" class="social-chip">📷 @sashas_coffee</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       12. NEWSLETTER / CONTACT
+  ══════════════════════════════════════════ -->
+  <section id="contact" class="section-dark newsletter-section fade-up">
+    <div class="container">
+      <div class="newsletter-grid">
+        <div class="newsletter-copy">
+          <p class="section-label light">Stay Connected</p>
+          <h2>Be the first to hear<br>about <em>specials</em> &amp; events</h2>
+          <p>Monthly updates on new menu items, seasonal specials, private dining nights and what's new at the Therapy Window — no spam, ever.</p>
+        </div>
+        <div class="newsletter-form-wrap">
+          <form id="newsletterForm" class="newsletter-form" novalidate>
+            <div class="form-group">
+              <label for="nlName">First Name</label>
+              <input type="text" id="nlName" name="name" placeholder="Your first name" autocomplete="given-name" required>
+            </div>
+            <div class="form-group">
+              <label for="nlEmail">Email Address</label>
+              <input type="email" id="nlEmail" name="email" placeholder="your@email.com" autocomplete="email" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Subscribe · Get 10% Off Your First Order</button>
+            <p class="form-note">No spam, ever. Unsubscribe at any time.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       13. FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <!-- BUG FIX: footer-logo uses explicit white color, never inherits -->
+          <div class="footer-logo">SASHA'S</div>
+          <p class="footer-tagline">Pizza, Coffee &amp; Panini Bar<br>Ballsbridge, Dublin 4</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/sashas_pizzeria/" target="_blank" rel="noopener" aria-label="Sasha's Pizzeria on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/sashas_coffee/" target="_blank" rel="noopener" aria-label="Sasha's Coffee Bar on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#about">Our Story</a></li>
+              <li><a href="#menu">The Menu</a></li>
+              <li><a href="#values">Our Values</a></li>
+              <li><a href="#instagram">Instagram</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Shop</h4>
+            <ul>
+              <li><a href="#shop">Coffee Beans</a></li>
+              <li><a href="#shop">Keep Cups</a></li>
+              <li><a href="#shop">Tote Bags</a></li>
+              <li><a href="#shop">Gift Cards</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Visit</h4>
+            <ul>
+              <li><a href="#find-us">Find Us</a></li>
+              <li><a href="https://www.opentable.com/restref/client/?rid=1296488" target="_blank" rel="noopener">Book a Table</a></li>
+              <!-- BUG FIX: tel link has no spaces in number -->
+              <li><a href="tel:+35316670020">+353 1 667 0020</a></li>
+              <li><a href="mailto:info@sashas.ie">info@sashas.ie</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <!-- BUG FIX: year injected by JS for always-current copyright -->
+        <p>© <span id="copyrightYear"></span> Sasha's Pizzeria &amp; Coffee Bar. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Shipping Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════
+       14. CART SIDEBAR
+  ══════════════════════════════════════════ -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar" role="dialog" aria-modal="true" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <p class="cart-empty">Your cart is empty.<br><a href="#shop">Browse the shop →</a></p>
+    </div>
+    <div class="cart-footer" id="cartFooter" hidden>
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">€0.00</span>
+      </div>
+      <p class="cart-shipping-msg" id="cartShippingMsg"></p>
+      <button class="btn btn-primary btn-full" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════════
+       15. CHECKOUT MODAL
+       BUG FIX: modal z-index 9000, toast z-index 9999
+  ══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="checkoutOverlay">
+    <div class="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+      <button class="modal-close" id="checkoutClose" aria-label="Close checkout">✕</button>
+      <h2 id="checkoutTitle">Checkout</h2>
+      <div class="checkout-body">
+        <div class="checkout-summary" id="checkoutSummary"></div>
+        <form id="checkoutForm" class="checkout-form" novalidate>
+          <h3>Delivery Details</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="coName">Full Name</label>
+              <input type="text" id="coName" name="name" placeholder="Jane Smith" autocomplete="name" required>
+            </div>
+            <div class="form-group">
+              <label for="coEmail">Email</label>
+              <input type="email" id="coEmail" name="email" placeholder="jane@email.com" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="coAddress">Delivery Address</label>
+            <input type="text" id="coAddress" name="address" placeholder="123 Main Street" autocomplete="street-address" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="coCity">City</label>
+              <input type="text" id="coCity" name="city" placeholder="Dublin" autocomplete="address-level2" required>
+            </div>
+            <div class="form-group">
+              <label for="coEircode">Eircode</label>
+              <input type="text" id="coEircode" name="eircode" placeholder="D04 X389" autocomplete="postal-code" required>
+            </div>
+          </div>
+          <div class="stripe-placeholder">
+            <div class="stripe-field-mock">
+              <svg width="24" height="16" viewBox="0 0 24 16" fill="none" aria-hidden="true"><rect width="24" height="16" rx="3" fill="#635BFF"/><text x="3" y="11" font-size="8" fill="white" font-family="sans-serif">STRIPE</text></svg>
+              <span>Card details secured by Stripe</span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Place Order →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast — BUG FIX: z-index 9999, ABOVE modal overlay -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
