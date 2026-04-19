@@ -134,6 +134,7 @@ p  { color: var(--text-muted); font-size: .9688rem; }
   justify-content: center;
   gap: .5rem;
   padding: .875rem 2rem;
+  min-height: 44px; /* touch target */
   border-radius: var(--r-full);
   font-family: var(--font-sans);
   font-size: .875rem;
@@ -162,7 +163,7 @@ p  { color: var(--text-muted); font-size: .9688rem; }
 .btn-outline-dark       { background: transparent; color: var(--charcoal); border: 1.5px solid var(--charcoal); }
 .btn-outline-dark:hover { background: var(--charcoal); color: var(--white); }
 
-.btn-sm   { padding: .5rem 1.25rem; font-size: .8125rem; }
+.btn-sm   { padding: .5rem 1.25rem; font-size: .8125rem; min-height: 44px; }
 .btn-full { width: 100%; }
 
 /* ══════════════════════════════════════════════════════
@@ -288,11 +289,13 @@ p  { color: var(--text-muted); font-size: .9688rem; }
   margin: 1.5rem 0 2rem;
 }
 
-.mobile-nav-links { display: flex; flex-direction: column; gap: 1.25rem; flex: 1; }
+.mobile-nav-links { display: flex; flex-direction: column; gap: .5rem; flex: 1; }
 .mobile-nav-link {
   font-size: 1.125rem; font-weight: 500;
   color: rgba(255,255,255,.75);
   transition: color var(--t); letter-spacing: .04em;
+  min-height: 44px; /* touch target */
+  display: flex; align-items: center;
 }
 .mobile-nav-link:hover { color: var(--white); }
 .book-link { color: var(--gold); }
@@ -554,7 +557,9 @@ p  { color: var(--text-muted); font-size: .9688rem; }
   margin-bottom: 2.5rem; flex-wrap: wrap;
 }
 .tab-btn {
-  padding: .625rem 1.5rem; border-radius: var(--r-full);
+  padding: .625rem 1.5rem;
+  min-height: 44px; /* touch target */
+  border-radius: var(--r-full);
   font-size: .875rem; font-weight: 600; letter-spacing: .04em;
   color: var(--warm-gray); border: 1.5px solid var(--cream-dark);
   background: transparent; transition: all var(--t);
@@ -789,7 +794,9 @@ p  { color: var(--text-muted); font-size: .9688rem; }
 .social-chips { display: flex; flex-direction: column; gap: .625rem; }
 .social-chip {
   display: inline-flex; align-items: center; gap: .5rem;
-  padding: .45rem 1rem; border: 1.5px solid var(--cream-dark);
+  padding: .45rem 1rem;
+  min-height: 44px; /* touch target */
+  border: 1.5px solid var(--cream-dark);
   border-radius: var(--r-full); font-size: .8125rem; font-weight: 500;
   transition: all var(--t);
 }
@@ -963,7 +970,7 @@ p  { color: var(--text-muted); font-size: .9688rem; }
 @media (max-width: 480px) {
   .hero-content  { padding: 1rem; }
   .hero-ctas     { flex-direction: column; align-items: center; }
-  .hero-ctas .btn { width: 100%; max-width: 280px; }
+  .hero-ctas .btn { width: 100%; max-width: 320px; }
 
   .menu-grid    { grid-template-columns: 1fr; }
   .menu-grid-sm { grid-template-columns: 1fr; }
@@ -977,4 +984,64 @@ p  { color: var(--text-muted); font-size: .9688rem; }
   .scroll-hint  { display: none; }
 
   .dual-card-body { padding: 1.5rem; }
+
+  .delivery-grid { max-width: 100%; }
+}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVE — 375px (smallest common phone)
+   Every element tested at 375px × 667px (iPhone SE)
+══════════════════════════════════════════════════════ */
+@media (max-width: 375px) {
+  :root { --section-py: 3rem; }
+
+  /* tighter container on very small screens */
+  .container { padding: 0 1rem; }
+
+  /* hero */
+  .hero-content h1    { font-size: 1.875rem; }
+  .hero-badge         { font-size: .65rem; letter-spacing: .15em; }
+  .hero-ctas .btn     { max-width: 100%; }
+  .hours-pill         { font-size: .75rem; }
+
+  /* marquee — smaller text so it doesn't get clipped */
+  .marquee-track      { font-size: .72rem; letter-spacing: .1em; }
+
+  /* dual section — stat row stacks on very small screens */
+  .dual-stat          { flex-direction: column; text-align: center; gap: .5rem; padding: 1.5rem; }
+  .dual-stat-num      { font-size: 2.5rem; }
+  .dual-card-body     { padding: 1.25rem; }
+  .dual-card-body h2  { font-size: 1.5rem; }
+
+  /* menu tabs — allow wrapping, full width feel */
+  .tab-btn            { padding: .5rem .875rem; font-size: .75rem; flex: 1; text-align: center; }
+  .menu-tabs          { gap: .25rem; }
+
+  /* delivery cards — icon + text don't squeeze */
+  .delivery-platform-card { gap: 1rem; padding: 1.25rem; }
+  .platform-icon      { width: 48px; height: 48px; font-size: .8rem; }
+
+  /* instagram — keep 2 cols but tighter gap */
+  .ig-grid            { gap: .375rem; }
+  .ig-cta-row .btn    { width: 100%; }
+
+  /* footer — single column at this width */
+  .footer-cols        { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-logo        { font-size: 1.75rem; }
+
+  /* visit banner */
+  .visit-address      { font-size: 1rem; }
+
+  /* section headers */
+  .section-header     { margin-bottom: 2.5rem; }
+  h2                  { font-size: 1.75rem; }
+
+  /* values list — slightly tighter */
+  .check              { width: 24px; height: 24px; font-size: .72rem; }
+
+  /* book section */
+  .book-ctas .btn     { width: 100%; }
+
+  /* hours table — ensure it doesn't overflow */
+  .hours-table        { font-size: .8125rem; }
 }
