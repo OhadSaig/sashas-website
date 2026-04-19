@@ -7,7 +7,7 @@
   <title>Sasha's | Pizzeria & Coffee Bar · Ballsbridge, Dublin 4</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
   ══════════════════════════════════════════ -->
   <nav id="navbar" class="navbar">
     <div class="nav-container">
-      <a href="#hero" class="nav-logo">SASHA'S</a>
+      <a href="#hero" class="nav-logo" aria-label="SASHAS — home">SASHAS</a>
       <ul class="nav-links" role="list">
         <li><a href="#about" class="nav-link">Our Story</a></li>
         <li><a href="#menu" class="nav-link">Menu</a></li>
@@ -47,7 +47,7 @@
   <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
     <button class="mobile-nav-close" id="mobileNavClose" aria-label="Close menu">✕</button>
-    <div class="mobile-logo">SASHA'S</div>
+    <div class="mobile-logo">SASHAS</div>
     <ul class="mobile-nav-links" role="list">
       <li><a href="#about" class="mobile-nav-link">Our Story</a></li>
       <li><a href="#menu" class="mobile-nav-link">Menu</a></li>
@@ -76,7 +76,7 @@
     <!-- BUG FIX: overlay is AFTER hero-bg in DOM so it sits on top -->
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-badge">Est. 2020 · Ballsbridge, Dublin 4</div>
+      <div class="hero-badge">Pizzeria &amp; Coffee Bar · Ballsbridge, Dublin 4</div>
       <h1>Where the <em>neighbourhood</em><br>comes alive</h1>
       <p class="hero-sub">Wood-fired Neapolitan pizza · Specialty coffee · Artisan panini<br>47 Shelbourne Road, Ballsbridge</p>
       <div class="hero-ctas">
@@ -625,7 +625,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <!-- BUG FIX: footer-logo uses explicit white color, never inherits -->
-          <div class="footer-logo">SASHA'S</div>
+          <div class="footer-logo">SASHAS</div>
           <p class="footer-tagline">Pizza, Coffee &amp; Panini Bar<br>Ballsbridge, Dublin 4</p>
           <div class="footer-socials">
             <a href="https://www.instagram.com/sashas_pizzeria/" target="_blank" rel="noopener" aria-label="Sasha's Pizzeria on Instagram">

@@ -27,6 +27,8 @@
   /* Typography */
   --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Logo font — condensed bold sans-serif matching original SASHAS brand mark */
+  --font-logo:  'Oswald', 'Arial Black', 'Arial Bold', Helvetica, sans-serif;
 
   /* Layout */
   --nav-h:      72px;
@@ -213,16 +215,21 @@ p { color: var(--text-muted); font-size: .9688rem; }
 }
 
 .nav-logo {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-family: var(--font-logo);
+  font-size: 1.625rem;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: .28em;
+  text-transform: uppercase;
   flex-shrink: 0;
   transition: color var(--t);
+  /* Remove default underline that Oswald can trigger */
+  text-decoration: none;
 }
 
+/* Transparent (on hero): white logo */
 .navbar.transparent .nav-logo { color: var(--white); }
-.navbar.scrolled   .nav-logo  { color: var(--charcoal); }
+/* Scrolled (on white bg): brand RED — matching SASHAS_Primary-Logo_RED */
+.navbar.scrolled   .nav-logo  { color: var(--red); }
 
 .nav-links {
   display: flex;
@@ -359,10 +366,11 @@ p { color: var(--text-muted); font-size: .9688rem; }
 .mobile-nav-close:hover { opacity: 1; }
 
 .mobile-logo {
-  font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-family: var(--font-logo);
+  font-size: 1.875rem;
   font-weight: 700;
-  letter-spacing: .15em;
+  letter-spacing: .28em;
+  text-transform: uppercase;
   color: var(--white);
   margin: 1.5rem 0 2rem;
 }
@@ -1240,10 +1248,11 @@ p { color: var(--text-muted); font-size: .9688rem; }
 
 /* BUG FIX: footer logo explicitly white — never inherits dark bg */
 .footer-logo {
-  font-family: var(--font-serif);
-  font-size: 2rem;
+  font-family: var(--font-logo);
+  font-size: 2.125rem;
   font-weight: 700;
-  letter-spacing: .12em;
+  letter-spacing: .28em;
+  text-transform: uppercase;
   color: var(--white) !important;
   margin-bottom: .75rem;
 }
@@ -1545,9 +1554,17 @@ p { color: var(--text-muted); font-size: .9688rem; }
   .hamburger { display: flex; }
 
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .about-visual { order: -1; }
+  .about-visual { order: -1; overflow: hidden; }
   .about-img-accent { right: -1rem; bottom: -1rem; width: 130px; }
-  .about-stat-card { left: -1rem; top: 1rem; }
+  /* BUG FIX: make stat card static at 1024px — prevents -1rem left overflow */
+  .about-stat-card {
+    position: static;
+    display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+    border-radius: var(--r-md);
+  }
 
   .values-grid { grid-template-columns: 1fr; gap: 3rem; }
   .values-visual { order: -1; }
