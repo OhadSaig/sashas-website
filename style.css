@@ -237,7 +237,7 @@ p  { color: var(--text-muted); font-size: .9688rem; }
 .nav-right { display: flex; align-items: center; gap: .75rem; margin-left: 1rem; }
 
 /* Hamburger */
-.hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; width: 36px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; width: 44px; min-height: 44px; justify-content: center; }
 .hamburger span {
   display: block; height: 2px; background: currentColor;
   border-radius: 2px; transition: transform var(--t), opacity var(--t);
@@ -276,6 +276,8 @@ p  { color: var(--text-muted); font-size: .9688rem; }
   color: var(--white); font-size: 1.5rem;
   align-self: flex-end; opacity: .7;
   transition: opacity var(--t); line-height: 1;
+  min-width: 44px; min-height: 44px;
+  display: flex; align-items: center; justify-content: flex-end;
 }
 .mobile-nav-close:hover { opacity: 1; }
 
@@ -302,12 +304,16 @@ p  { color: var(--text-muted); font-size: .9688rem; }
 .book-link:hover { color: var(--white); }
 
 .mobile-nav-footer {
-  display: flex; gap: 1.25rem;
+  display: flex; gap: .5rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255,255,255,.12);
   color: rgba(255,255,255,.45);
 }
-.mobile-nav-footer a { transition: color var(--t); }
+.mobile-nav-footer a {
+  transition: color var(--t);
+  min-width: 44px; min-height: 44px;
+  display: flex; align-items: center; justify-content: center;
+}
 .mobile-nav-footer a:hover { color: var(--white); }
 
 /* ══════════════════════════════════════════════════════
@@ -640,8 +646,8 @@ p  { color: var(--text-muted); font-size: .9688rem; }
   font-size: .9rem;
 }
 .wine-item:last-child { border-bottom: none; }
-.wine-name  { font-weight: 500; color: var(--charcoal); }
-.wine-price { font-size: .8rem; color: var(--warm-gray); white-space: nowrap; }
+.wine-name  { font-weight: 500; color: var(--charcoal); flex-shrink: 0; }
+.wine-price { font-size: .8rem; color: var(--warm-gray); text-align: right; }
 .wine-item-highlight .wine-name { color: var(--accent); font-weight: 600; }
 
 .drinks-bottom-row {
@@ -814,7 +820,10 @@ p  { color: var(--text-muted); font-size: .9688rem; }
   color: var(--accent); margin-bottom: .625rem;
 }
 .info-block p { font-size: .9rem; margin-bottom: .25rem; }
-.info-link { color: var(--charcoal); font-weight: 500; transition: color var(--t); }
+.info-link {
+  color: var(--charcoal); font-weight: 500; transition: color var(--t);
+  display: inline-flex; align-items: center; min-height: 44px;
+}
 .info-link:hover { color: var(--accent); }
 
 .hours-table { width: 100%; border-collapse: collapse; font-size: .875rem; }
@@ -887,9 +896,9 @@ p  { color: var(--text-muted); font-size: .9688rem; }
 
 .footer-tagline { font-size: .875rem; color: rgba(255,255,255,.45); line-height: 1.7; margin-bottom: 1.5rem; }
 
-.footer-socials { display: flex; gap: 1rem; }
+.footer-socials { display: flex; gap: .75rem; }
 .footer-socials a {
-  width: 36px; height: 36px; border-radius: 50%;
+  width: 44px; height: 44px; border-radius: 50%;
   background: rgba(255,255,255,.08);
   display: flex; align-items: center; justify-content: center;
   color: rgba(255,255,255,.6);
@@ -928,7 +937,8 @@ p  { color: var(--text-muted); font-size: .9688rem; }
   box-shadow: var(--sh-lg); z-index: 9999;
   opacity: 0; pointer-events: none;
   transition: opacity .3s ease, transform .3s ease;
-  white-space: nowrap; max-width: 90vw;
+  max-width: min(90vw, 480px);
+  text-align: center; word-break: break-word;
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
@@ -953,7 +963,7 @@ p  { color: var(--text-muted); font-size: .9688rem; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
 
-  .dual-grid   { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+  /* dual section stays 2-col on tablets/small laptops — single col at 768px */
   .dual-stat   { margin-top: 2rem; }
 
   .values-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -969,8 +979,6 @@ p  { color: var(--text-muted); font-size: .9688rem; }
 
   .menu-grid    { grid-template-columns: repeat(2,1fr); }
   .menu-grid-sm { grid-template-columns: repeat(2,1fr); }
-
-  .delivery-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -986,8 +994,10 @@ p  { color: var(--text-muted); font-size: .9688rem; }
 
   .ig-grid { grid-template-columns: repeat(2,1fr); }
 
-  .footer-cols   { grid-template-columns: repeat(2,1fr); }
+  .footer-cols   { grid-template-columns: 1fr; gap: 1.75rem; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: .75rem; }
+
+  .delivery-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
 
   .visit-banner-inner { flex-direction: column; text-align: center; }
 
@@ -995,12 +1005,12 @@ p  { color: var(--text-muted); font-size: .9688rem; }
   .book-section    { padding: 5rem 0; }
   .book-ctas       { flex-direction: column; }
 
-  .dual-grid             { max-width: 100%; }
+  /* dual collapses to single column at true tablet portrait */
+  .dual-grid             { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
   .menu-grid             { grid-template-columns: repeat(2, 1fr); }
   .drinks-cocktail-grid  { grid-template-columns: 1fr; }
   .drinks-wine-section   { grid-template-columns: 1fr; }
   .drinks-bottom-row     { grid-template-columns: 1fr; }
-  .delivery-grid         { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -1019,15 +1029,18 @@ p  { color: var(--text-muted); font-size: .9688rem; }
   .menu-tabs             { gap: .375rem; }
   .tab-btn               { padding: .5rem 1rem; font-size: .8rem; }
 
+  /* wine items — name + price stack when price is long */
+  .wine-item             { flex-direction: column; align-items: flex-start; gap: .15rem; padding: .875rem 0; }
+  .wine-price            { text-align: left; }
+
   .ig-grid      { grid-template-columns: repeat(2,1fr); }
   .ig-cta-row   { flex-direction: column; }
 
-  .footer-cols  { grid-template-columns: 1fr 1fr; }
   .scroll-hint  { display: none; }
 
   .dual-card-body { padding: 1.5rem; }
 
-  .delivery-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .delivery-grid { grid-template-columns: 1fr; max-width: 100%; }
 }
 
 /* ══════════════════════════════════════════════════════
